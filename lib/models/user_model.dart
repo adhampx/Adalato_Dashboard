@@ -6,6 +6,8 @@ class UserModel {
   String email;
   double weight;
   double height;
+  String gender;
+
   String fitnessLevel; // Beginner, Intermediate, Advanced
   List<String> goals; // Build Muscle, Lose Fat, Learn Techniques
   DateTime subscriptionDate;
@@ -21,6 +23,7 @@ class UserModel {
     required this.email,
     required this.weight,
     required this.height,
+    required this.gender,
     required this.fitnessLevel,
     required this.goals,
     required this.subscriptionDate,
@@ -39,6 +42,7 @@ class UserModel {
       'email': email,
       'weight': weight,
       'height': height,
+      'gender': gender,
       'fitnessLevel': fitnessLevel,
       'goals': goals,
       'subscriptionDate': subscriptionDate.toIso8601String(),
@@ -59,6 +63,7 @@ class UserModel {
       weight: map['weight']?.toDouble() ?? 0.0,
       height: map['height']?.toDouble() ?? 0.0,
       fitnessLevel: map['fitnessLevel'] ?? '',
+      gender: map['gender'] ?? '',
       goals: List<String>.from(map['goals'] ?? []),
       subscriptionDate: DateTime.parse(
           map['subscriptionDate'] ?? DateTime.now().toIso8601String()),
